@@ -36,7 +36,7 @@ def training_loop(
     model_args,
     # Dataloader
     batch_size,
-    num_rays,
+    num_rays, #default 2048
     num_workers,
     no_shuffle,
     # Loss
@@ -90,7 +90,7 @@ def training_loop(
                                             data_dir=data_dir,
                                             sub_dirs=train_subdirs,
                                             img_res=img_res,
-                                            num_rays=num_rays,
+                                            num_rays=num_rays, #by default 2048
                                             subsample=train_subsample,
                                             use_semantics=loss_args["use_semantic"],
                                             no_gt=False,
@@ -110,7 +110,7 @@ def training_loop(
                               batch_size,
                               sampler=InfiniteSampler(train_dataset, accel.local_process_index,
                                                       accel.num_processes, not no_shuffle, seed),
-                              drop_last=False,
+                              drop_last=False, #https://pytorch.org/docs/1.3.0/data.html#torch.utils.data.DataLoader
                               num_workers=num_workers,
                               persistent_workers=True,
                               pin_memory=True)

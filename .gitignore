@@ -12,3 +12,9 @@ node_modules/
 mesh_data**/
 sequence_data**/
 dist/
+
+nvdiffrast/
+*.swp
+
+code/flame/FLAME2020/Readme.pdf
+code/flame/FLAME2020/landmark_embedding.npy
