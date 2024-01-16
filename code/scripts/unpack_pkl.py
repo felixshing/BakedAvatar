@@ -171,6 +171,9 @@ if __name__ == "__main__":
     assert os.path.exists(args.input), f"Input file {args.input} does not exist"
     if args.output is None:
         args.output = os.path.splitext(args.input)[0]
+        
+    # print(args.output)
+    # exit()
 
     SAVE_PNG = bool(args.save_png)
     unpack_pkl_to(args.input, args.output)
